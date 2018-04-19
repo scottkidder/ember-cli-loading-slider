@@ -10,7 +10,7 @@ export default Mixin.create({
       let loadingSliderService = this.get('loadingSlider');
       loadingSliderService.startLoading();
       if (isPresent(this.router)) {
-        this.router.one('didTransition', function() {
+        this.router.router.on('didTransition', function() {
           loadingSliderService.endLoading();
         });
       }
